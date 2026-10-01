@@ -1,4 +1,4 @@
-const C='aac-v6-2-flexible-name-signature';
+const C='aac-v6-4-new-app-icon';
 const CORE=['./','./index.html','./manifest.webmanifest'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(CORE)))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
